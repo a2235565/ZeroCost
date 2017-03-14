@@ -1,0 +1,4 @@
+sql:2017-03-15 00:00:55show database
+sql_error:2017-03-15 00:00:551064You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1show database
+sql:2017-03-15 00:01:27show databases
+sql:2017-03-15 00:12:45show databases
