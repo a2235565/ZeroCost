@@ -26,5 +26,5 @@ WebRoot <br/>
 &nbsp;&nbsp;|-index.php 网站入口 <br/>
 README.md <br/>
  <br/>
-根据 yzymvc修改 阉割 V 层  <br/>
+根据 yzymvc修改<br/>
 路由规则  get   ?m=xx&c=xx&a=xx <br/>
