@@ -4,7 +4,7 @@ class Route{
     function run(){
         foreach($_GET as $k=>$v)
             $get[$k]=addslashes($v);
-        $config = include(ROOTPATH . "/Config/Conf.php");
+        $config = include(ROOTPATH . "/Config/conf.php");
         $m=isset($get['m'])?$get['m']:$config['defaultModular'];
         $c=isset($get['c'])?$get['c']:'Index';
         $a=isset($get['a'])?$get['a']:'Index';
@@ -12,7 +12,10 @@ class Route{
         $file="/Project/$m/$c";
         if(file_exists(ROOTPATH.$file.'.php')){
             $go = new $action();
-            $go->$a();
+            if(method_exists($go,$a))
+                $go->$a();
+            else
+                trigger_error('方法不存在',E_USER_ERROR);
         }else{
             trigger_error('找不到您要的方法',E_USER_ERROR);
         }
