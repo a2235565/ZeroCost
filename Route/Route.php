@@ -9,7 +9,8 @@ class Route{
         $c=isset($get['c'])?$get['c']:'Index';
         $a=isset($get['a'])?$get['a']:'Index';
         $action="\\Project\\$m\\$c";
-        if(file_exists(ROOTPATH.'/'.$action.'.php')){
+        $file="/Project/$m/$c";
+        if(file_exists(ROOTPATH.$file.'.php')){
             $go = new $action();
             $go->$a();
         }else{
