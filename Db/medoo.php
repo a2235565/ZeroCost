@@ -405,7 +405,7 @@ class medoo
     public function select($table, $join, $columns = null, $where = null)
     {
         $query = $this->query($this->select_context($table, $join, $columns, $where));
-        return $query ? $query->fetchAll((is_string($columns) && $columns != '*') ? PDO::FETCH_COLUMN : PDO::FETCH_ASSOC) : false;
+        return $query ? $query->fetchAll((is_string($columns) && $columns != '*') ? \PDO::FETCH_COLUMN : \PDO::FETCH_ASSOC) : false;
     }
 
     public function insert($table, $datas)
