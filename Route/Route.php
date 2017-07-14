@@ -13,7 +13,7 @@ class Route{
         if(file_exists(ROOTPATH.$file.'.php')){
             $go = new $action();
             if(method_exists($go,$a))
-                $go->$a();
+              return  $go->$a();
             else
                 trigger_error('方法不存在',E_USER_ERROR);
         }else{

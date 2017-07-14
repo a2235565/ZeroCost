@@ -27,4 +27,14 @@ function M($str=null){
     }
 }
 
+function getOption($type='get',$name=null){
+    if($type=='get') $for = $_GET ;else $for = $_POST;
+    $return=array();
+    foreach($for as $k=>$v){
+        if($k!=='c'&&$k!=='a')
+        $return[$k] = htmlspecialchars(addslashes($v));
+    }
+    if($name) return isset($return[$name])?$return[$name]:"" ; else return $return;
+}
+
 

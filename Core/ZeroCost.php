@@ -32,8 +32,13 @@ class ZeroCost
 
     public function run()
     {
-      $route =new  \Route\Route();
-      $route->run();
+       $route =new  \Route\Route();
+       $data = $route->run();
+        if($this->conf['is_api']){
+            ob_clean();
+            echo json_encode($data);
+            die();
+        }
     }
 
     function autoLoadding()
