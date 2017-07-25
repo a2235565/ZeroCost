@@ -11,7 +11,7 @@ namespace Model;
 class Index {
     protected $db = null;
     function __construct(){
-    	 $conf = include ROOTPATH . '/Config/conf.php'
+    	 $conf = include ROOTPATH . '/Config/conf.php';
     	 if($conf['debug']){
         //开发模式方便提示
          $this->db =  new \Db\medoo(include ROOTPATH . '/Config/dbConf.php');
