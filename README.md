@@ -23,10 +23,8 @@ Model 数据模型目录 <br/>
 Project 控制器目录  <br/>
 &nbsp;&nbsp;|-Index 模块名 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|-Index.php 控制器 <br/>
-
 &nbsp;&nbsp;|-System 模块名(系统内置) <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|-TaskList.php Web队列基础 <br/>
-
 Route 路由 <br/>
 &nbsp;&nbsp;|-Route.php 路由文件 <br/>
 WebRoot <br/>
@@ -34,6 +32,6 @@ WebRoot <br/>
 View 视图层 <br/>
 &nbsp;&nbsp;|-index.html 模板 <br/>
 README.md <br/>
- <br/>
+<br/>
 根据 yzymvc修改<br/>
 路由规则  get   ?m=xx&c=xx&a=xx <br/>
