@@ -48,6 +48,10 @@ function getOption($type='get',$name=null){
 
 function getCache($name){
     $fielpath = ROOTPATH.'/Cache/';
+    if(!file_exists($fielpath.$name))
+    {
+        return null;
+    }
     $data = file_get_contents($fielpath.$name);
     if(!empty($data)){
         $data = json_decode($data, true);
@@ -57,6 +61,7 @@ function getCache($name){
     }
     return null;
 }
+
 function setCache($name,$value,$uptime=7200){
     $fielpath = ROOTPATH.'/Cache/';
     $data['time'] = time();
