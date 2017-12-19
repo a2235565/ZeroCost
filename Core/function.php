@@ -22,10 +22,17 @@ function M($str=null){
     if(empty($str))
         return \ZeroCost\Core\Register::get('db');
     else{
-        $model="\\Model\\{$str}";
-        return new $model();
+        if($modelDb = \ZeroCost\Core\Register::get($str.'Model')){
+            return $modelDb;
+        }else{
+            $model="\\Model\\{$str}";
+            $modelDb = new $model();
+            \ZeroCost\Core\Register::set($str.'Model',$modelDb);
+            return $modelDb;
+        }
     }
 }
+
 
 function getOption($type='get',$name=null){
     if($type=='get') $for = $_GET ;else $for = $_POST;
@@ -35,6 +42,31 @@ function getOption($type='get',$name=null){
         $return[$k] = htmlspecialchars(addslashes($v));
     }
     if($name) return isset($return[$name])?$return[$name]:"" ; else return $return;
+}
+
+
+
+function getCache($name){
+    $fielpath = ROOTPATH.'/Cache/';
+    $data = file_get_contents($fielpath.$name);
+    if(!empty($data)){
+        $data = json_decode($data, true);
+        if(time() - $data['time'] < $data['expires_in']){
+            return $data['value'];
+        }
+    }
+    return null;
+}
+function setCache($name,$value,$uptime=7200){
+    $fielpath = ROOTPATH.'/Cache/';
+    $data['time'] = time();
+    $data['value']= $value;
+    $data['expires_in']= $uptime;
+    $data = json_encode($data);
+    $f = fopen($fielpath.$name, 'w+');
+    $power = fwrite($f, $data);
+    fclose($f);
+    return $power;
 }
 
 
