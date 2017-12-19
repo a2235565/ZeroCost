@@ -86,7 +86,7 @@ function taskForWebRun($funcPath,$size){
             $json = json_encode(array('callback'=>$funcPath,'size'=>$size));
             setCache($taskName.'pageGoWhere',0);
             setCache('task-'.$taskName,$json);
-            $url = '?m=System&c=TaskList&a=run&taskName'.$taskName.'&page=0';
+            $url = '?m=System&c=TaskList&a=run&taskName='.$taskName.'&page=0';
             Header("Location: $url");
         }else{
             return false;
@@ -97,7 +97,7 @@ function taskForWebRun($funcPath,$size){
             $json = json_encode(array('callback'=>$funcPath,'size'=>$size));
             setCache($taskName.'pageGoWhere',0);
             setCache('task-'.$taskName,$json);
-            $url = '?m=System&c=TaskList&a=run&taskName'.$taskName.'&page=0';
+            $url = '?m=System&c=TaskList&a=run&taskName='.$taskName.'&page=0';
             Header("Location: $url");
         }else{
             return false;
