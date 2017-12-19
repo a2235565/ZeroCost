@@ -10,4 +10,8 @@ class TaskTest implements Task{
     {
         // TODO: Implement isException() method.
     }
+    function go(){
+        //运行入口
+        taskForWebRun('\Task\TaskTest',100);
+    }
 }
