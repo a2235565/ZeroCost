@@ -9,7 +9,10 @@ class Register
     }
     static  public function get($name)
     {
-        return( self::$obj[$name]);
+        if(!empty( self::$obj[$name]))
+            return self::$obj[$name];
+        else
+            return null;
     }
     static  public function _unset($name)
     {
