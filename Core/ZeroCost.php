@@ -16,7 +16,7 @@ class ZeroCost
     function __construct()
     {
         header("X-Powered-By:ZeroCost");
-        $this->conf = include ROOTPATH . '/Config/conf.php';
+        $this->conf = include ROOTPATH . '/Config/Conf.php';
         $this->autoLoadding();
         spl_autoload_register(array("ZeroCost\\Core\\Autoload", 'autoload'));
         $this->erro();
