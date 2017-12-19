@@ -1,6 +1,7 @@
 #  2017-3-15   code by yzy <br/>
 目录结构  <br/>
 Config 配置文件 <br/>
+Cache 缓存文件 <br/>
 &nbsp;&nbsp;|-aotoLoad.php 自动加载项 <br/>
 &nbsp;&nbsp;|-conf.php 系统配置项 <br/>
 &nbsp;&nbsp;|-dbConf.php 数据库配置项 <br/>
