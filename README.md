@@ -1,6 +1,7 @@
 #  2017-3-15   code by yzy <br/>
 目录结构  <br/>
 Cache 缓存文件 <br/>
+Task 队列文件夹 <br/>
 Config 配置文件 <br/>
 &nbsp;&nbsp;|-aotoLoad.php 自动加载项 <br/>
 &nbsp;&nbsp;|-conf.php 系统配置项 <br/>
@@ -13,6 +14,7 @@ Core 核心 <br/>
 &nbsp;&nbsp;|-function.php 公共函数 <br/>
 &nbsp;&nbsp;|-Register.php 注册树 <br/>
 &nbsp;&nbsp;|-ZeroCost.php 核心 <br/>
+&nbsp;&nbsp;|-Task.php 队列接口类 <br/>
 Db 数据库 <br/>
 &nbsp;&nbsp;|-medoo.php   medoo 数据库扩展类 <br/>
 Log 日志 <br/>
@@ -21,6 +23,10 @@ Model 数据模型目录 <br/>
 Project 控制器目录  <br/>
 &nbsp;&nbsp;|-Index 模块名 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;|-Index.php 控制器 <br/>
+
+&nbsp;&nbsp;|-System 模块名(系统内置) <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|-TaskList.php Web队列基础 <br/>
+
 Route 路由 <br/>
 &nbsp;&nbsp;|-Route.php 路由文件 <br/>
 WebRoot <br/>
