@@ -21,7 +21,7 @@ class TaskList extends Controller{
         $taskName = getOption('get','taskName');
         $this->taskName = $taskName;
         $oldPage = getCache($taskName.'pageGoWhere');
-        $runUrlPre = '?m=System&c=TaskList&a=run&taskName'.$taskName.'&';
+        $runUrlPre = '?m=System&c=TaskList&a=run&taskName='.$taskName.'&';
         if($nowPage<$oldPage){
             $this->go = $runUrlPre."page=".$oldPage+2;
             $this->nowRunWhere = $oldPage+1;
