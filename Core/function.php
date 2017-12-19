@@ -70,3 +70,17 @@ function setCache($name,$value,$uptime=7200){
 }
 
 
+
+function taskForWebRun($funcPath,$size){
+    $callable = new $funcPath();
+    if($callable instanceof \ZeroCost\Core\Task){
+        $taskName = md5(time());
+        $json = json_encode(array('callback'=>$funcPath,'size'=>$size));
+        setCache($taskName.'pageGoWhere',0);
+        setCache('task-'.$taskName,$json);
+        $url = '?m=System&c=TaskList&a=run&taskName'.$taskName.'&page=0';
+        Header("Location: $url");
+    }else{
+        return false;
+    }
+}
