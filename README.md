@@ -25,6 +25,8 @@ Route 路由 <br/>
 &nbsp;&nbsp;|-Route.php 路由文件 <br/>
 WebRoot <br/>
 &nbsp;&nbsp;|-index.php 网站入口 <br/>
+View 视图层 <br/>
+&nbsp;&nbsp;|-index.html 模板 <br/>
 README.md <br/>
  <br/>
 根据 yzymvc修改<br/>
