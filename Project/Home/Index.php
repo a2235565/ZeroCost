@@ -24,7 +24,11 @@ class Index extends Controller
         else
             return array('msg' => '您未注册请前往注册', 'code' => 500);
     }
-
+    
+    function testTask(){
+        taskForWebRun('\Task\TaskTest5',88);
+    }
+    
     function getOpen_id(){
         $get=getOption('get');
         $url="https://api.weixin.qq.com/sns/jscode2session?appid={$get['appid']}&secret={$get['secret']}&grant_type=authorization_code&js_code={$get['js_code']}";
