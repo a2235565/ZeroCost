@@ -6,6 +6,10 @@ class TaskTest5 implements Task_Php5 {
     function run($page)
     {
         echo $page;
+        for($i=0;$i<1000000;$i++)
+        {
+            rand(1,1000)*rand(1,99999);
+        }
         if($page==100){
             return false;
         }
