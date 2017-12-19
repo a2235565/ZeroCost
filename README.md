@@ -2,6 +2,7 @@
 目录结构  <br/>
 Cache 缓存文件 <br/>
 Task 队列文件夹 <br/>
+&nbsp;&nbsp;|-TaskTest.php 队列示例 <br/>
 Config 配置文件 <br/>
 &nbsp;&nbsp;|-aotoLoad.php 自动加载项 <br/>
 &nbsp;&nbsp;|-conf.php 系统配置项 <br/>
