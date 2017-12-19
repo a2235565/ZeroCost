@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by yzy.
+ * Created by PhpStorm.
  * User: Administrator
  * Date: 2017/3/14
  * Time: 23:41
@@ -37,11 +37,11 @@ class TaskList extends Controller{
        $taskList = getCache('task-'.$this->taskName);
        $arr = json_decode($taskList,true);
        if(empty($arr)){
-           echo "任务异常";
+           echo "任务异常Cache未找到";
            return false;
        }
-
-       if(file_exists(ROOTPATH . '/' .$arr['callback'].'.php')){
+       $file=str_replace('\\','/',$arr['callback']);
+       if(file_exists(ROOTPATH . '/' .$file.'.php')){
            $func = new $arr['callback']();
        }else{
            echo "任务异常";
