@@ -15,7 +15,8 @@ Core 核心 <br/>
 &nbsp;&nbsp;|-function.php 公共函数 <br/>
 &nbsp;&nbsp;|-Register.php 注册树 <br/>
 &nbsp;&nbsp;|-ZeroCost.php 核心 <br/>
-&nbsp;&nbsp;|-Task.php 队列接口类 <br/>
+&nbsp;&nbsp;|-Task_Php5.php 队列接口类 <br/>
+&nbsp;&nbsp;|-Task_Php7.php 队列接口类 <br/>
 Db 数据库 <br/>
 &nbsp;&nbsp;|-medoo.php   medoo 数据库扩展类 <br/>
 Log 日志 <br/>
