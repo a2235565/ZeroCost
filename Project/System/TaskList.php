@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
+ * Created by yzy.
  * User: Administrator
  * Date: 2017/3/14
  * Time: 23:41
@@ -36,7 +36,18 @@ class TaskList extends Controller{
     function run(){
        $taskList = getCache('task-'.$this->taskName);
        $arr = json_decode($taskList,true);
-       $func = new $arr['callback']();
+       if(empty($arr)){
+           echo "任务异常";
+           return false;
+       }
+
+       if(file_exists(ROOTPATH . '/' .$arr['callback'].'.php')){
+           $func = new $arr['callback']();
+       }else{
+           echo "任务异常";
+           return false;
+       }
+
        try{
            $power = $func->run($this->nowRunWhere);
        }catch (\Exception $e){
@@ -58,6 +69,11 @@ class TaskList extends Controller{
                echo '任务完成';
                return true;
            }
+       }else{
+           unlink(ROOTPATH.'/Cache/'.$this->taskName.'pageGoWhere');
+           unlink(ROOTPATH.'/Cache/task-'.$this->taskName);
+           echo '<br/>任务完成';
+           return true;
        }
 
 
