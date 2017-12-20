@@ -1,5 +1,6 @@
 <?php
 namespace ZeroCost\Core;
+use \ZeroCost\Core\Register;
 class Common_Error
 {
     /**
@@ -13,7 +14,7 @@ class Common_Error
      */
     static public function ErrorHandler($errno, $errstr, $errfile, $errline) {
         // 为了安全起见，不暴露出真实物理路径，下面两行过滤实际路径
-        $config = include(ROOTPATH . "/Config/conf.php");
+        $config = \ZeroCost\Core\Register::get('Sysconfig');
         if(!$config['debug'])die();
         if($config['is_api']){
             echo json_encode(array('code'=>$errno,'info'=>$errline));
