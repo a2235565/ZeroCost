@@ -17,13 +17,15 @@ class ZeroCost
     {
         header("X-Powered-By:ZeroCost");
         $this->conf = include ROOTPATH . '/Config/Conf.php';
+        $this->erro();
         $this->autoLoadding();
         spl_autoload_register(array("ZeroCost\\Core\\Autoload", 'autoload'));
-        $this->erro();
+        \ZeroCost\Core\Register::set('Sysconfig',$this->conf);
     }
 
     function erro(){
         // 设定错误和异常处理
+        require_once 'Error.php';
         register_shutdown_function('ZeroCost\Core\Common_Error::fatalError');
         set_error_handler('ZeroCost\Core\Common_Error::ErrorHandler');
         set_exception_handler('ZeroCost\Core\Common_Error::appException');
@@ -32,13 +34,8 @@ class ZeroCost
 
     public function run()
     {
-       $route =new  \Route\Route();
-       $data = $route->run();
-        if($this->conf['is_api']){
-            ob_clean();
-            echo json_encode($data);
-            die();
-        }
+      $route =new  \Route\Route();
+      $route->run();
     }
 
     function autoLoadding()
