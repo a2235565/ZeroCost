@@ -38,3 +38,64 @@ README.md <br/>
 <br/>
 根据 yzymvc修改<br/>
 路由规则  get   ?m=xx&c=xx&a=xx <br/>
+
+
+<pre>
+
+[root@iZbp14dhkm7u57k8ya18orZ Home]# ab -c 100 -n 500000 http://127.0.0.1/
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 50000 requests
+Completed 100000 requests
+Completed 150000 requests
+Completed 200000 requests
+Completed 250000 requests
+Completed 300000 requests
+Completed 350000 requests
+Completed 400000 requests
+Completed 450000 requests
+Completed 500000 requests
+Finished 500000 requests
+
+
+Server Software:        nginx
+Server Hostname:        127.0.0.1
+Server Port:            80
+
+Document Path:          /
+Document Length:        162 bytes
+
+Concurrency Level:      100
+Time taken for tests:   33.491 seconds
+Complete requests:      500000
+Failed requests:        0
+Write errors:           0
+Non-2xx responses:      500000
+Total transferred:      152500000 bytes
+HTML transferred:       81000000 bytes
+Requests per second:    14929.44 [#/sec] (mean)
+Time per request:       6.698 [ms] (mean)
+Time per request:       0.067 [ms] (mean, across all concurrent requests)
+Transfer rate:          4446.76 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.5      0       5
+Processing:     1    6   2.9      6     164
+Waiting:        0    6   3.0      6     164
+Total:          3    7   2.8      7     164
+
+Percentage of the requests served within a certain time (ms)
+  50%      7
+  66%      8
+  75%      8
+  80%      8
+  90%      9
+  95%      9
+  98%     10
+  99%     11
+ 100%    164 (longest request)
+</pre>
