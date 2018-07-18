@@ -42,7 +42,6 @@ README.md <br/>
 
 <pre>
 
-[root@iZbp14dhkm7u57k8ya18orZ Home]# ab -c 100 -n 500000 http://127.0.0.1/
 This is ApacheBench, Version 2.3 <$Revision: 655654 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -62,7 +61,7 @@ Finished 500000 requests
 
 
 Server Software:        nginx
-Server Hostname:        127.0.0.1
+Server Hostname:        ---------
 Server Port:            80
 
 Document Path:          /
